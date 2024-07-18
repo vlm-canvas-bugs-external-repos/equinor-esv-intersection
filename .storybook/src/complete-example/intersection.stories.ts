@@ -110,14 +110,14 @@ const renderIntersection = (scaleOptions: any) => {
     const pixiContext1 = new PixiRenderApplication({ width, height });
     const pixiContext2 = new PixiRenderApplication({ width, height });
 
-    console.log("Two app instances!")
-    console.log(pixiContext1)
-    console.log("In window.__PIXI_APP__")
-    console.log(pixiContext2)
-    console.log("In window.__PIXI_APP_2__")
+    console.log("Two app instances!");
+    console.log(pixiContext1);
+    console.log("In window.__PIXI_APP__");
+    console.log(pixiContext2);
+    console.log("In window.__PIXI_APP_2__");
 
-    window.__PIXI_APP__ = pixiContext1
-    window.__PIXI_APP_2__ = pixiContext2
+    window.parent.__PIXI_APP__ = pixiContext1;
+    window.parent.__PIXI_APP_2__ = pixiContext2;
 
     // Instantiate layers
     const gridLayer = new GridLayer('grid', {
